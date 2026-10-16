@@ -4,6 +4,8 @@ A real-time WebGL recreation of the ramp stunt from the Tesla Roadster reveal: t
 towering C-shaped ramp, leaves the overhanging lip upside down, barrel-rolls on cold-gas
 thrusters, and cushions its landing with four downward retro jets in a cloud of smoke.
 
+Reference footage: [Tesla's official Roadster reveal post on X](https://x.com/Tesla/status/2110913438293647789).
+
 Unofficial fan project — not affiliated with Tesla. The car is an original procedural model.
 
 ## Run
