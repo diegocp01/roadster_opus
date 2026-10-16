@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+*.log
+
+# exported recordings
+*.webm
+*.mp4
+
+# local Claude Code settings
+.claude/settings.local.json

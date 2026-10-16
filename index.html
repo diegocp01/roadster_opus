@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ramp Drop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div id="ui">
+    <header id="brand">
+      <div class="logo">RAMP<i>/</i>DROP</div>
+      <div class="sub">C‑ramp climb · inverted ejection · cold‑gas barrel roll · retro‑thrust landing</div>
+    </header>
+
+    <section id="telemetry" class="panel">
+      <div class="phase"><span class="dot"></span><span id="t-phase">STANDBY</span><span id="t-fps" class="fps"></span></div>
+      <div class="grid">
+        <div><label>Speed</label><b id="t-speed">0</b><small>km/h</small></div>
+        <div><label>Altitude</label><b id="t-alt">0.0</b><small>m</small></div>
+        <div><label>Pitch</label><b id="t-pitch">0</b><small>°</small></div>
+        <div><label>Roll</label><b id="t-roll">0</b><small>°</small></div>
+        <div><label>Load</label><b id="t-g">1.00</b><small>g</small></div>
+        <div><label>T+</label><b id="t-time">0.00</b><small>s</small></div>
+      </div>
+      <div class="thrusters">
+        <label>Thrusters</label>
+        <svg viewBox="0 0 80 120" aria-label="Thruster state, top view">
+          <rect x="22" y="12" width="36" height="96" rx="15" class="car" />
+          <path d="M31 44 Q40 34 49 44 L47 84 Q40 92 33 84 Z" class="glass" />
+          <circle id="m0" cx="30" cy="19" r="4.5" class="jet" />
+          <circle id="m1" cx="50" cy="19" r="4.5" class="jet" />
+          <circle id="m2" cx="30" cy="101" r="4.5" class="jet" />
+          <circle id="m3" cx="50" cy="101" r="4.5" class="jet" />
+          <path id="s0" d="M21 32 L5 29 L5 35 Z" class="jet" />
+          <path id="s1" d="M21 88 L5 85 L5 91 Z" class="jet" />
+          <path id="s2" d="M59 32 L75 29 L75 35 Z" class="jet" />
+          <path id="s3" d="M59 88 L75 85 L75 91 Z" class="jet" />
+        </svg>
+        <div class="legend"><span><i class="c"></i>retro ×4</span><span><i class="t"></i>roll / attitude</span></div>
+      </div>
+    </section>
+
+    <div id="caption"><span class="rec"></span><span class="txt"></span></div>
+
+    <footer id="dock">
+      <nav id="cams" class="panel"></nav>
+      <div id="bar" class="panel">
+        <button id="b-play" title="Play / pause (Space)">❚❚</button>
+        <button id="b-restart" title="Restart (R)">↺</button>
+        <div id="timeline">
+          <div id="marks"></div>
+          <div id="track"><div id="fill"></div><div id="head"></div></div>
+        </div>
+        <div id="speeds">
+          <button data-s="0.25">¼×</button><button data-s="0.5">½×</button><button data-s="1">1×</button>
+        </div>
+        <button id="b-rec" title="Record one director cycle to video">● Rec</button>
+        <button id="b-hud" title="Hide interface (H)">Hide UI</button>
+      </div>
+    </footer>
+  </div>
+  <button id="b-showhud" title="Show interface (H)">UI</button>
+
+  <div id="loading"><div class="spin"></div><span>Building proving ground…</span></div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
