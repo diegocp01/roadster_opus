@@ -1,5 +1,9 @@
 # Roadster Ramp Drop — Three.js stunt simulation
 
+![Left: frames from Tesla's Roadster reveal video. Right: the same moments in this simulation.](docs/comparison.jpg)
+
+<sub>Left: frames from [Tesla's reveal video](https://x.com/Tesla/status/2110913438293647789) · Right: the same moments in this sim (launch, retro burn wide, retro burn low front).</sub>
+
 A real-time WebGL recreation of the ramp stunt from the Tesla Roadster reveal: the car climbs a
 towering C-shaped ramp, leaves the overhanging lip upside down, barrel-rolls on cold-gas
 thrusters, and cushions its landing with four downward retro jets in a cloud of smoke.
